@@ -1,0 +1,37 @@
+<md-bottom-sheet class="md-list | md-has-header " style="width:500px">
+
+  <md-toolbar layout="row" class="md-toolbar-tools" style="background-color: transparent" flex>
+    <h1 style="color :black">
+      {{$ctrl.title}}
+    </h1>
+  </md-toolbar>
+  <md-divider/>
+
+  <div>
+    <md-input-container class="md-block" flex-gt-sm="50">
+      <label>{{$ctrl.username}}</label>
+      <input md-maxlength="8" required name="number" ng-model="user.name"/>
+
+      <div class="hint" style="color : gray">{{$ctrl.username_hint}}</div>
+
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm="50">
+      <label>Password</label>
+      <input required password="number" ng-model="user.password" type="password"/>
+    </md-input-container>
+
+    <p>{{user.name}} {{user.password}} </p>
+
+  </div>
+
+  <div layout="row" layout-align="end end">
+    <md-button ng-click="$ctrl.cancelOnClick()">
+      Cancel
+    </md-button>
+    <md-button ng-click="$ctrl.lsButtonOnClick()" class="md-primary">
+      {{$ctrl.lsButton}}
+    </md-button>
+  </div>
+
+</md-bottom-sheet>

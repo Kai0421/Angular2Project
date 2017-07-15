@@ -1,0 +1,55 @@
+<h2>
+  <md-icon md-svg-icon="{{$ctrl.selected.avatar}}" class="avatar"></md-icon>
+  {{$ctrl.selected.name}} {{$ctrl.stuff}}
+</h2>
+<md-divider/>
+<!--<p>Please Select the software for the project : </p>-->
+
+<!--Card view Content Div-->
+<div>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab ng-repeat="team in $ctrl.selected.teams" label="{{team.title}}">
+        <div ng-repeat="software in team.softwares">
+          <md-card flex flex-gt-xs="49" class="software">
+            <div>
+              <h2>
+                <md-icon class="md-avatar-icon" md-svg-icon="assets/svg/vs.svg" style="width:30px;height:30px; padding-bottom:5px; padding-left:5px;"></md-icon>
+                {{software.sname}}
+                <input type="checkbox" value="None" name="check" ng-checked="{{software.compulsary}}" />
+
+                <!--Provide Line Divider Between Title and Content-->
+                <md-divider/>
+              </h2>
+            </div>
+
+            <md-card-content>
+              <p>
+                {{software.description}}
+              </p>
+            </md-card-content>
+
+          </md-card>
+        </div>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>
+<!--Select All | Unselect All | Submit Button Div-->
+<div>
+  <div layout="row" layout-align="start" flex>
+    <md-button ng-click="selectAll()" ng-disabled="!(quest || favoriteColor)">Select All</md-button>
+    <md-button ng-click="clearValue()" ng-disabled="!(quest || favoriteColor)">Unselect All</md-button>
+  </div>
+
+  <div layout="row" layout-align="end" flex>
+    <md-button ng-click="$ctrl.share(false)" class="md-primary">Submit</md-button>
+  </div>
+</div>
+
+<div>
+  <md-button class="md-fab | md-fab-top-right | md-primary" ng-click="$ctrl.share(true)" aria-label="Share">
+    <md-tooltip md-direction="left" md-delay="">Admin Login</md-tooltip>
+    <md-icon md-svg-src="assets/svg/setting.svg"></md-icon>
+  </md-button>
+</div>

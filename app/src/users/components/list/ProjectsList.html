@@ -1,0 +1,17 @@
+<!-- NOTE: @see ngClick for how to pass data selection to outside expression -->
+<md-list>
+  
+   <md-toolbar md-scroll-shrink>
+    <div class="md-toolbar-tools">Projects</div>
+
+    <!--Provide Line Divider Between Title and Content-->
+    <md-divider/>
+  </md-toolbar>
+
+  <md-list-item ng-repeat="project in $ctrl.projects">
+    <md-button ng-click="$ctrl.showDetails({project:project})" ng-class="{'selected' : project === $ctrl.selected }">
+      <md-icon md-svg-icon="{{project.avatar}}" class="avatar"></md-icon>
+      {{project.name}}
+    </md-button>
+  </md-list-item>
+</md-list>

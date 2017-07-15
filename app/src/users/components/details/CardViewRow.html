@@ -1,0 +1,31 @@
+<!--Card View row (Contain 2 cards)-->
+<div layout="column" layout-gt-xs="row">
+    <md-card flex flex-gt-xs="49">
+        <div>
+            <h2>
+                <md-icon class="md-avatar-icon" md-svg-icon="assets/svg/vs.svg" style="width:30px;height:30px;"></md-icon>
+                Visual Studio <!--{{CardTitle}}-->
+                <input type="checkbox" value="None" id="squaredThree" name="check" />
+
+                <!--Provide Line Divider Between Title and Content-->
+                <md-divider/>
+            </h2>
+        </div>
+
+        <md-card-content>
+            <p>Visual Studio Professional 2015 <!--{{CardContent}}--> </p>
+        </md-card-content>
+
+    </md-card>  
+    <md-card flex>
+        <h2>
+            <md-icon class="md-avatar-icon" md-svg-icon="assets/svg/vs.svg" style="width:30px;height:30px;"></md-icon>
+            SQL Server Management Studio <!--{{CardTitle}}-->
+            <input type="checkbox" value="None" id="squaredThree" name="check" />
+            <md-divider/>
+        </h2>
+        <md-card-content>
+            <p>SQL Management Studio Version 2012 <!--{{CardContent}}--> </p>
+        </md-card-content>
+    </md-card>
+</div>
